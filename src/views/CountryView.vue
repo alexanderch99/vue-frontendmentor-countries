@@ -3,6 +3,7 @@ import ButtonMain from "@/components/ButtonMain.vue";
 import ArrowLeft from "@/components/icons/ArrowLeft.vue";
 import apiService from "@/services/api-service";
 import type { CountryInfo, Currency, Currencies, Languages } from "@/types/api";
+import { projectBase } from "@/utils/consts";
 import countryToLink from "@/utils/country-to-link";
 import { onMounted, ref } from "vue";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
@@ -92,7 +93,7 @@ onBeforeRouteUpdate(async (to) => {
   <div class="country">
     <div class="container country__container">
       <div v-if="isError" class="error text text-600">{{ errorMsg }}</div>
-      <RouterLink to="/">
+      <RouterLink :to="`${projectBase}/`">
         <ButtonMain class="country__back"
           ><ArrowLeft class="icon icon-arrow" />Back</ButtonMain
         ></RouterLink
@@ -149,7 +150,7 @@ onBeforeRouteUpdate(async (to) => {
             <RouterLink
               v-for="value in borderCountries"
               :key="value"
-              :to="`/countries/${countryToLink(value)}`"
+              :to="`${projectBase}/countries/${countryToLink(value)}`"
             >
               <ButtonMain class="country__near-country">{{ value }}</ButtonMain></RouterLink
             >

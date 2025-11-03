@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CountryView from "@/views/CountryView.vue";
 import HomeView from "@/views/HomeView.vue";
+import { projectBase } from "@/utils/consts";
 
 const routes = [
-  { path: "/", name: "home", component: HomeView },
-  { path: "/countries/:country", name: "country", component: CountryView },
+  { path: projectBase, name: "home", component: HomeView },
+  { path: `${projectBase}/countries/:country`, name: "country", component: CountryView },
 ];
 
 const router = createRouter({

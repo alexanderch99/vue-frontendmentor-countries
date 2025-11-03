@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { projectBase } from "@/utils/consts";
 import countryToLink from "@/utils/country-to-link";
 
 const { flagUrl, countryName, official, population, region, capital } = defineProps<{
@@ -29,7 +30,9 @@ const { flagUrl, countryName, official, population, region, capital } = definePr
         <span>Capital: </span><span>{{ capital }}</span>
       </p>
     </div>
-    <RouterLink :to="`/countries/${countryToLink(official)}`" class="country-card__more-info text"
+    <RouterLink
+      :to="`${projectBase}/countries/${countryToLink(official)}`"
+      class="country-card__more-info text"
       >More info</RouterLink
     >
   </div>
