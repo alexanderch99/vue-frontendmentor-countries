@@ -21,7 +21,7 @@ const { flagUrl, countryName, official, population, region, capital } = definePr
         {{ countryName }}
       </h2>
       <p class="country-card__population country-card__sub">
-        <span>Population: </span><span>{{ population }}</span>
+        <span>Population: </span><span>{{ population.toLocaleString().split(",").join(" ") }}</span>
       </p>
       <p class="country-card__region country-card__sub">
         <span>Region: </span><span>{{ region }}</span>

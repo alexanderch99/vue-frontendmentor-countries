@@ -112,7 +112,7 @@ onBeforeRouteUpdate(async (to) => {
             <!-- next item -->
             <p class="country__info-item">
               <span class="country__span-static">Population:&nbsp;</span
-              ><span>{{ countryData?.population }}</span>
+              ><span>{{ countryData?.population?.toLocaleString().split(",").join(" ") }}</span>
             </p>
             <!-- next item -->
             <p class="country__info-item">
